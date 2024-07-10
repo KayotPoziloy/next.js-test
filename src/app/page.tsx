@@ -1,15 +1,14 @@
 'use client';
 import { useState, useEffect } from "react";
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styles from './styles.module.scss';
 import itmo from '../img/img.png';
 import rus from '../img/rus.png';
 import eng from '../img/eng.png';
 import triangle from '../img/triangle.png';
+import Link from "next/link";
 
 export default function Home() {
-    const router = useRouter();
     const [language, setlanguage] = useState('rus');
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [news, setNews] = useState([]);
@@ -71,19 +70,21 @@ export default function Home() {
                 </p>
                 <div className={styles.gridWrapper}>
                     {news.map((newsItem) => (
-                        <div key={newsItem.id} className={styles.kartochkaNovosti}>
-                            <img
-                                alt=""
-                                className={styles.maska}
-                                src={newsItem.image_small}
-                            />
-                            <p className={styles.date}>
-                                {new Date(newsItem.date).toLocaleDateString(language === 'rus' ? 'ru-RU' : 'en-US')}
-                            </p>
-                            <p className={styles.tehnologiiJelektronn}>
-                                {newsItem.title}
-                            </p>
-                        </div>
+                        <Link href={newsItem.url}>
+                            <div key={newsItem.id} className={styles.kartochkaNovosti}>
+                                <img
+                                    alt=""
+                                    className={styles.maska}
+                                    src={newsItem.image_small}
+                                />
+                                <p className={styles.date}>
+                                    {new Date(newsItem.date).toLocaleDateString(language === 'rus' ? 'ru-RU' : 'en-US')}
+                                </p>
+                                <p className={styles.tehnologiiJelektronn}>
+                                    {newsItem.title}
+                                </p>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </div>

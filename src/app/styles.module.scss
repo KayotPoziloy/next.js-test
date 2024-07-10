@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,600&display=swap');
+
+@font-face {
+    font-family: "Muller";
+    src: url('../fonts/MullerBold.woff') format('woff');
+    //font-size: 40px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin open-sans-12-semi-bold {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+@mixin open-sans-16-semi-bold {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+@mixin open-sans-12-semi-bold-line48 {
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 48px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #3951E7 20.77%, #832AB9 91.64%);
+}
+
+.itmo {
+    width: 161.33px;
+    height: auto;
+}
+
+.language {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    @include open-sans-12-semi-bold;
+}
+
+.triangle {
+    width: 12px;
+    height: 12px;
+}
+
+.dropout {
+    position: absolute;
+    top: 72px;
+    right: 40px;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 10px;
+}
+
+.language:hover .dropout {
+    display: block;
+}
+
+.Eng, .Rus {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.Eng:hover, .Rus:hover {
+    background-color: #f0f0f0;
+}
+
+.novosti {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.novostiISobytija {
+    margin-bottom: 40px;
+    font-family: 'Muller', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.gridWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.kartochkaNovosti {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.maska {
+    width: 100%;
+    height: 224px;
+    object-fit: cover;
+}
+
+.date {
+    margin: 16px 24px 8px;
+    color: rgba(106, 106, 106, 1);
+    @include open-sans-12-semi-bold;
+}
+
+.tehnologiiJelektronn {
+    margin: 0 24px 24px;
+    color: rgba(34, 34, 34, 1);
+    @include open-sans-16-semi-bold;
+}
+
+.rus {
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    left: 1557px;
+    gap: 0px;
+}
+
+.eng {
+    width: 24px;
+    height: 24px;
+    top: 48px;
+    left: 1557px;
+    gap: 0px;
+}
+
+.engTxt {
+    width: 22px;
+    height: 24px;
+    top: 48px;
+    left: 1587px;
+    gap: 0px;
+    @include open-sans-12-semi-bold-line48
+}
+
+.rusTxt {
+    width: 20px;
+    height: 24px;
+    top: 84px;
+    left: 1587px;
+    gap: 0px;
+    @include open-sans-12-semi-bold-line48
+}

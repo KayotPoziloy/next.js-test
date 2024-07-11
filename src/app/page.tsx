@@ -52,7 +52,7 @@ export default function Home() {
                     <div className={styles.dropout}>
                         {/* Eng */}
                         <div className={styles.Eng} onClick={() => switchLanguage('eng')}>
-                            <Image src={eng} className={styles.rus} alt="English Language"/>
+                            <Image src={eng} className={styles.eng} alt="English Language"/>
                             <a className={styles.engTxt}>Eng</a>
                         </div>
                         {/* Rus */}
@@ -64,23 +64,23 @@ export default function Home() {
                 )}
             </div>
             {/* Новости */}
-            <div className={styles.novosti}>
-                <p className={styles.novostiISobytija}>
+            <div className={styles.news}>
+                <p className={styles.newsAndEvents}>
                     {language === 'rus' ? 'Новости и события' : 'News and Events'}
                 </p>
                 <div className={styles.gridWrapper}>
                     {news.map((newsItem) => (
                         <Link href={newsItem.url}>
-                            <div key={newsItem.id} className={styles.kartochkaNovosti}>
+                            <div key={newsItem.id} className={styles.newsCard}>
                                 <img
                                     alt=""
-                                    className={styles.maska}
+                                    className={styles.mask}
                                     src={newsItem.image_small}
                                 />
                                 <p className={styles.date}>
                                     {new Date(newsItem.date).toLocaleDateString(language === 'rus' ? 'ru-RU' : 'en-US')}
                                 </p>
-                                <p className={styles.tehnologiiJelektronn}>
+                                <p className={styles.newsTitle}>
                                     {newsItem.title}
                                 </p>
                             </div>
